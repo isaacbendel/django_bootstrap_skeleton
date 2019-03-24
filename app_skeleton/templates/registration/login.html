@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<body> 
+    <div class="mx-auto p-5" style="width: 400px;">
+        <div class='card'>
+            <div class="card-header">
+                Login
+            </div>
+            <div class='m-4'>
+                <form action="/accounts/login/?next=/" method="post" id="login-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        <input type="text" class="form-control" name="username" autofocus="" maxlength="254" required="" id="id_username">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_password">Password</label>
+                        <input type="password" class="form-control" name="password" required="" id="id_password">
+                    </div>
+                    <input type="hidden" name="next" value="/">
+                        <button class="btn btn-secondary" type="submit" value="Log in">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

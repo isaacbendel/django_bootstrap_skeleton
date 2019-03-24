@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<script> 
+    $( document ).ready(function() {
+        $(document).on('click', '#link', function(){
+            console.log('a');
+            //If condition is met - redirect to second_page view with these query string params.
+            if (true == true){
+                new_link = "/second_page/?temp_directory=" + $('#temp_directory').val();
+                console.log(new_link)
+                window.location.href = new_link
+            } else {
+                $('#error_message').html('')
+            }
+            });
+        });
+</script>
+
+<body>
+    <input type='hidden' value="{{temp_directory}}" id='temp_directory'>
+
+    <div class='p-1'>
+        <h1>Do Something!!</h1>
+        
+        <a href="#" id='link' class="btn btn-primary" role="button">Submit</a>
+        
+        <p id='error_message'></p>
+        
+        <h3>Some preliminary results</h3>
+        {{results}}
+    </div>
+
+</body>
+{% endblock %}

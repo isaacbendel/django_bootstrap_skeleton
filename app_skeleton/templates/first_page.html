@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+<body> 
+    <div style = 'padding:30px;'>
+        <div class="card">
+            <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                Upload Files
+            </h5>
+            </div>
+            <div clas="card-body">
+                <div class='form-group' style='padding:30px;'>
+                    <form action="/" method="post" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+                        <table class='table table-striped'>
+                            <tr>
+                                <td>
+                                    <label>Select File: DNC List</label>
+                                </td>
+                                <td>
+                                    {{ upload_form.file_1 }}
+                                </td>
+                                <!---
+                                <td>
+                                        <label>Some input field</label>
+                                </td>
+                                <td>
+                                    {{ upload_form.input_1 }}
+                                </td>
+                                -->
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Select File: List to clean</label>
+                                </td>
+                                <td>
+                                    {{ upload_form.file_2 }}
+                                </td>
+                                <!---
+                                <td>
+                                        <label>Some input field</label>
+                                </td>
+                                <td>
+                                    {{ upload_form.input_2 }}
+                                </td>
+                                -->
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button type="submit" class="btn btn-secondary" name = 'action' value ='file_upload'>Submit</button>
+                                </td>
+                                <td>
+
+                                </td>
+                                <!---
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                -->
+
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

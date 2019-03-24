@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %} 
+<body>
+    <div class="mx-auto p-5" style="width: 400px;">
+        <div class='card'>
+            <div class="card-header">
+                Logged out
+            </div>
+            <div class='m-4'>
+                <p class='card-text'>{{error_message}}</p>
+                <a href="/accounts/login/" class="btn btn-secondary">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
