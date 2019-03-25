@@ -27,7 +27,7 @@ def remove_temp_files(UPLOAD_DIRECTORY):
     todays_prefix = datetime.datetime.now().strftime('%Y_%m_%d_')
     yesterdays_prefix = (datetime.datetime.now() - datetime.timedelta(days = 1)).strftime('%Y_%m_%d_')
     directories = glob.glob(UPLOAD_DIRECTORY + '/*/')
-    old_directories = [x for x in directories if not (x.startswith(todays_prefix) or x.startswith(yesterdays_prefix)]
+    old_directories = [x for x in directories if not (x.startswith(todays_prefix) or x.startswith(yesterdays_prefix))]
     for directory in old_directories:
         files = glob.glob(os.path.join(directory + '/*.*'))
         for file in files:
